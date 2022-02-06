@@ -164,3 +164,129 @@ SET id=10
 ```
 
 ### orWhere
+
+Just like where with adding OR operator.
+
+Usage:
+
+```php
+$this->modelName->where('name', $search)->orWhere('address', $search)->get();
+```
+
+Support third optional parameter as well
+
+```php
+$this->modelName->where('name', $search)->orWhere('address', $search, 'LIKE')->get();
+```
+
+### orderBy
+
+Order the fetch by parameter
+
+Usage:
+
+```php
+$this->modelName->orderBy('id', 'DESC')->get();
+```
+
+### limit
+
+Limit fetch result by given parameter
+
+Usage:
+
+```php
+$this->modelName->limit(5)->get();
+```
+
+### join
+
+Join a table with another table
+
+Usage:
+
+```php
+$this->modelName->join('price_table', 'ticket.id', 'price.id')->get(['price.price', 'ticket.id']);
+```
+
+### first
+
+Get the first result from fetch. `Looping is not required`.
+
+Usage:
+
+```php
+$this->modelName->first();
+```
+
+Support optional parameter as array:
+
+```php
+$this->modelName->first(['price', 'id']);
+```
+
+### count
+
+Count a table row
+
+Usage:
+
+```php
+$model = $this->modelName->count();
+$count = $model->result;
+```
+
+### insert
+
+Insert a data to the table
+
+Usage:
+
+```php
+$data = [
+    'ticket_type' => 'flight',
+    'ticket_uid' => '2907jjbg989gjs1fg42f2'
+];
+$this->modelName->insert($data);
+```
+
+### lastInsertId
+
+Get a last insert id from Auto Increment based table.
+
+Usage:
+
+```php
+$data = [
+    'ticket_type' => 'flight',
+    'ticket_uid' => '2907jjbg989gjs1fg42f2'
+];
+$this->modelName->insert($data, true);
+$lastinsert = $this->modelName->lastInsertId();
+```
+
+### update
+
+Update a record based on parameter
+
+Usage:
+
+```php
+$data = [
+    'ticket_type' => 'bus',
+    'ticket_uid' => '2907jjbg989gjs1fg42f2'
+];
+$this->modelName->where('id', 1)->update($data);
+```
+
+### delete
+
+Delete a record
+
+Usage:
+
+```php
+$this->modelName->where('id', 1)->delete();
+```
+
+> Next: [View](view.md)

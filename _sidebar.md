@@ -8,3 +8,4 @@
   - [Routing](routing.md)
   - [Controller](controller.md)
   - [Model](model.md)
+  - [View](view.md)
