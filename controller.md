@@ -65,4 +65,8 @@ Examples:
 Route:add('/somerurl', [Some::class, 'someMethod']);
 ```
 
+## Dependency Injection
+
+For now. Controller also support `Requests` dependency injection. Details can be found here: [Requests](request.md#usage)
+
 > Next: [Model](model.md)

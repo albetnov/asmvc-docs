@@ -16,4 +16,5 @@ This mark `{}` are stands for a parameter.
 
 A required parameter would look like this `{controller}`. Meanwhile a optional parameter would look like this `{test?}`.
 
-> Next: [MVC Structure | Controller](controller.md)
+> Next: [MVC Structure | Controller](controller.md)<br>
+> Read first: [Routing](routing.md)

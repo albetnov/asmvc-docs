@@ -11,7 +11,7 @@
 
 ASMVC can be installed by:
 
-```console
+```bash
 composer create-project albet/asmvc project-folder-name -s dev
 ```
 
