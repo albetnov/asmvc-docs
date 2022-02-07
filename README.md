@@ -7,6 +7,18 @@
 
 ## Quick Start
 
+> ASMVC Requiresments:
+
+ASMVC needs the following to run:
+
+- PHP 8.0 and up
+- Composer
+
+> Supported Technology:
+
+- Database: MySQL
+- Web Server: Apache (Mod Rewrite, Override).
+
 > Installing ASMVC
 
 ASMVC can be installed by:

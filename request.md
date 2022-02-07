@@ -32,7 +32,7 @@ public function getInput(Requests $request){
 
 List of available `Requests` method:
 
-- `input`
+- `input`<br>
 Getting `$_POST` input given by user. Returning the escaped characters only. 
 Available parameter are:
     - `field`
@@ -40,15 +40,15 @@ Available parameter are:
     - `escape` (Optional)
     Allowed value are `boolean`. Default: true.
 
-- `upload`
+- `upload`<br>
 Getting `$_FILES` input given by the user. Returning fully `$_FILES`.
 Available parameter is `name` with allowed value is `string`.
 
-- `query`
+- `query`<br>
 Getting `$_GET` input given by the user. Returning the escaped characters only.
 Available parameter is `name` with allowed value is `string`.
 
-- `currentURL`
+- `currentURL`<br>
 Getting user's current full url.
 
 > Next: [Validator](validator.md)

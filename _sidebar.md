@@ -12,5 +12,11 @@
   - [View](view.md)
 
 - More Deeper
+
   - [Middleware](middleware.md)
   - [Requests](request.md)
+  - [Validator](validator.md)
+
+- Advanced
+  - [Redis](redis.md)
+  - [Tests](tests.md)
