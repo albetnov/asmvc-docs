@@ -58,8 +58,8 @@ File: PostController.php
 --------------------------
 public function submit() {
     $validate = Validator::make([
-        'subject' => request()->input('subject'),
-        'content' => request()->input('content')
+        'subject' => ['required', 'min:3'],
+        'content' => 'required'
     ]);
     if($validate->fails()) {
         return redirect('/create-post');
