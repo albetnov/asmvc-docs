@@ -11,6 +11,7 @@
   - [Model](model.md)
   - [Eloquent Model](eloquent.md)
   - [View](view.md)
+  - [Latte](latte.md)
 
 - More Deeper
 

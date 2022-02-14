@@ -1,6 +1,6 @@
 # ASMVC Validator
 
-ASMVC Provides you a simple validator to help you validate user input in the form.
+ASMVC Provides you a [Rakit Validator](https://github.com/rakit/validation) to help you validate user input in the form.
 
 ## Usage
 
@@ -9,7 +9,21 @@ To use Validator you can do it by:
 ```php
 Validator::make([
     'field1' => 'rule',
-    'field2' => ['multiple', 'rule']
+    'field2' => 'multiple|rule'
+]);
+```
+
+You can also change the error message by including another array:
+
+```php
+Validator::make([
+    'field1' => 'rule',
+    'field2' => 'multiple|rule'
+],
+[
+    'field1:rule' => 'this rule is required',
+    'field2:multiple' => 'this rule is a multiple.',
+    'field2:rule' => 'this rule is required'
 ]);
 ```
 
@@ -25,17 +39,14 @@ List of Validator methods:
   Allows you to make an validator rule based on field. Required parameter are `validate` with `array` as it's type. Specifying array keys and values is required. This method can be accessed directly via Helper with `makeValidate()` without the needs
   of specifying `Validator` class.
 
-- `fails`
-  This method will return `boolean` value depends on validation rule whenever it's success or not.<br>
-  Example Usage:
-
 ```php
 $validate = Validator::make([
     'name' => 'required',
     'password' => ['required', 'min:8']
 ]);
 
-if($validate->fails()) {
+//Handle validation in case it's fail.
+if(!$validate) {
     return redirect('/');
 }
 ```
@@ -58,44 +69,38 @@ File: PostController.php
 --------------------------
 public function submit() {
     $validate = Validator::make([
-        'subject' => ['required', 'min:3'],
+        'subject' => 'required|min:3',
         'content' => 'required'
     ]);
-    if($validate->fails()) {
+    if(!$validate) {
         return redirect('/create-post');
     }
 }
 
 ```
 
-```php
-File: create-post.php
+```latte
+File: create-post.latte
 --------------------------
 
-<form action="/submit" method="POST">
+<form action="{url('submit')}" method="POST">
     <div class="mb-1">
         <label>Subject</label>
-        <input type="text" name="subject" class="form-control <?= checkError('subject') ? 'is-invalid' : '' ?>" value="<?= old('subject') ?>">
-        <?php if (checkError('subject')) {
-        ?>
+        <input type="text" name="subject" class="form-control {checkError('subject') ? 'is-invalid' : ''}" value="{old('subject')}">
+        {if (checkError('subject'))}
             <div class="invalid-feedback">
-                <?= validateMsg('subject') ?>
+                {validateMsg('subject')}
             </div>
-        <?php
-        }
-        ?>
+        {/if}
     </div>
     <div class="mb-1">
         <label>Content</label>
-        <textarea name="content" class="form-control <?= checkError('content') ? 'is-invalid' : '' ?>"><?= old('subject') ?></textarea>
-        <?php if (checkError('content')) {
-        ?>
+        <textarea name="content" class="form-control {checkError('content') ? 'is-invalid' : ''}">{old('subject')}</textarea>
+        {if (checkError('content'))}
             <div class="invalid-feedback">
-                <?= validateMsg('content') ?>
+                {validateMsg('content')}
             </div>
-        <?php
-        }
-        ?>
+        {/if}
     </div>
 </form>
 ```
