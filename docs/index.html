@@ -24,6 +24,12 @@
         themeColor: "#61dfff",
         loadSidebar: true,
         autoHeader: true,
+        alias: {
+          "/1.x/(.*)":
+            "https://raw.githubusercontent.com/albetnov/asmvc-docs/main/docs/1.x/$i",
+          "/1.x/.*_sidebar_md":
+            "https://raw.githubusercontent.com/albetnov/asmvc-docs/main/docs/1.x/_sidebar.md",
+        },
 
         // complete configuration parameters
         search: {
