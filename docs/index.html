@@ -25,10 +25,10 @@
         loadSidebar: true,
         autoHeader: true,
         alias: {
-          ".*_sidebar.md":
+          "/.*_sidebar.md":
             "https://raw.githubusercontent.com/albetnov/asmvc-docs/main/docs/_sidebar.md",
           "/1.x/(.*)":
-            "https://raw.githubusercontent.com/albetnov/asmvc-docs/main/docs/1.x/$i",
+            "https://raw.githubusercontent.com/albetnov/asmvc-docs/main/docs/1.x/$1",
           "/1.x/.*_sidebar.md":
             "https://raw.githubusercontent.com/albetnov/asmvc-docs/main/docs/1.x/_sidebar.md",
         },
@@ -73,10 +73,10 @@
     <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
-    <script>
+    <!-- <script>
       if (typeof navigator.serviceWorker !== "undefined") {
         navigator.serviceWorker.register("sw.js");
       }
-    </script>
+    </script> -->
   </body>
 </html>
