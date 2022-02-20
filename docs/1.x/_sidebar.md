@@ -1,7 +1,7 @@
 - Getting Started
 
   - [Home](/)
-  - [ENV Configuration](envconfig.md)
+  - [ENV Configuration](1.x/envconfig.md)
   - [CLI Interface](clicommands.md)
 
 - MVC Structure

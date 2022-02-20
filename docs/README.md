@@ -3,7 +3,7 @@
 > ASMVC is a project created by Albet Novendo. Intended for your simple web projects that based on MVC. ASMVC itself is
 > a sort of A Simple MVC
 
-> Docs Version: 2.x (BETA).
+> Docs Version: 2.x (BETA). Looking for old one? [1.x](1.x/)
 
 ## Quick Start
 
