@@ -19,6 +19,8 @@
   - [Middleware](middleware.md)
   - [Requests](request.md)
   - [Validator](validator.md)
+  - [Migration](migration.md)
+  - [Seeder](seeder.md)
 
 - Advanced
   - [Redis](redis.md)
