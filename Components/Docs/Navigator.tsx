@@ -17,12 +17,12 @@ export default function Navigator({title, lists}: NavigatorProps) {
             <CardBody>
                 <Text>{title}</Text>
                 <List mt={3}>
-                    <ListItem>
-                        <ListIcon as={BsListNested}/>
-                        {lists.map((item) => (
-                            <Link href={item.link} key={item.link}>{item.title}</Link>
-                        ))}
-                    </ListItem>
+                    {lists.map((item) => (
+                        <ListItem key={item.link} my={1}>
+                            <ListIcon as={BsListNested}/>
+                            <Link href={"#" + item.link}>{item.title}</Link>
+                        </ListItem>
+                    ))}
                 </List>
             </CardBody>
         </Card>

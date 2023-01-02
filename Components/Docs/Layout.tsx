@@ -13,7 +13,7 @@ import {useRouter} from "next/router";
 import AccordionLink from "./AccordionLink";
 
 interface DocsLayoutProps extends PropsWithChildren {
-    title: string;
+    title?: string;
     desc?: string;
 }
 
@@ -22,7 +22,7 @@ export default function Layout({title, desc, children}: DocsLayoutProps) {
     const index = router.pathname === "/docs" || router.pathname.startsWith("/docs/starting/new") ? 0 : 1;
 
     return (
-        <MainLayout title={title} desc={desc}>
+        <MainLayout title={title ? 'ASMVC Docs | '+ title : "ASMVC Docs"} desc={desc}>
             <Grid templateColumns="20% 1fr">
                 <GridItem borderRight="1px solid" borderColor="gray.300" my={3}>
                     <Accordion defaultIndex={index} allowToggle p={5}>

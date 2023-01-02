@@ -14,23 +14,27 @@ import Section from "../../Components/Docs/Section";
 import Badge from "../../Components/Docs/Badge";
 import CodeOneLine from "../../Components/Docs/CodeOneLine";
 
+const navigations = [
+    {link: "definition", title: "What is ASMVC?"},
+    {link: "installation", title: "Installation"}
+]
+
 export default function Docs() {
     const {colorMode} = useColorMode();
 
     return (
-        <Layout title="ASMVC Docs">
+        <Layout>
             <Box as="section" mt={10}>
                 <Heading textAlign="center">Welcome to Documentation!</Heading>
                 <Text border="1px solid" borderColor={colorMode === "light" ? "black" : "white"} py={3} px={10} mb={7}
                       mt={3} w="fit-content">v3</Text>
-                <Navigator title="This is where you find the full documentation of ASMVC Framework." lists={[
-                    {link: "definition", title: "What is ASMVC?"}
-                ]}/>
+                <Navigator title="This is where you find the full documentation of ASMVC Framework."
+                           lists={navigations}/>
                 <TipsCard>
                     It's a good idea to start with the <Link as={NextLink} href="/guide">Guide</Link> if you still
                     new with the PHP worlds.
                 </TipsCard>
-                <Section title="What is ASMVC?">
+                <Section title={navigations[0].title} id={navigations[0].link}>
                     <Text>
                         ASMVC is a framework created by {" "}
                         <Link href="https://github.com/albetnov">AlbetNov</Link>.
@@ -39,7 +43,7 @@ export default function Docs() {
                         try out any random open source project out there, including this framework.
                     </Text>
                 </Section>
-                <Section title="Installation">
+                <Section title={navigations[1].title} id={navigations[1].link}>
                     <Text>
                         Installing ASMVC is dead simple. But before that make sure your machine has requirement as
                         below:
