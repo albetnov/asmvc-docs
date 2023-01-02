@@ -31,14 +31,19 @@ export default function Docs() {
                     new with the PHP worlds.
                 </TipsCard>
                 <Section title="What is ASMVC?">
-                    ASMVC is a framework created by {" "}
-                    <Link href="https://github.com/albetnov">AlbetNov</Link>.
-                    Clearly for fun and of course to develop skill. This framework is developed with <b>fun</b> in
-                    mind and of course <b>for fun</b>. That's why this framework targeted for those who just want to
-                    try out any random open source project out there, including this framework.
+                    <Text>
+                        ASMVC is a framework created by {" "}
+                        <Link href="https://github.com/albetnov">AlbetNov</Link>.
+                        Clearly for fun and of course to develop skill. This framework is developed with <b>fun</b> in
+                        mind and of course <b>for fun</b>. That's why this framework targeted for those who just want to
+                        try out any random open source project out there, including this framework.
+                    </Text>
                 </Section>
                 <Section title="Installation">
-                    Installing ASMVC is dead simple. But before that make sure your machine has requirement as below:
+                    <Text>
+                        Installing ASMVC is dead simple. But before that make sure your machine has requirement as
+                        below:
+                    </Text>
                     <Badge>Requiresments:</Badge>
                     <UnorderedList>
                         <ListItem>PHP 8.0 and UP (It is recommended to use PHP 8.1)</ListItem>
@@ -48,8 +53,9 @@ export default function Docs() {
                     <UnorderedList>
                         <ListItem>Ext: <Code>exec()</Code>, <Code>system()</Code> (For the ASMVC Cli)</ListItem>
                     </UnorderedList>
-
-                    If above requirements met, you can simply install asmvc by running:
+                    <Text>
+                        If above requirements met, you can simply install asmvc by running:
+                    </Text>
                     <CodeOneLine text="composer create-project albet/asmvc project-name"/>
                 </Section>
             </Box>
