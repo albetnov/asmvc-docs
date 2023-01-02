@@ -10,6 +10,8 @@ import {
 } from "@chakra-ui/react";
 import MainLayout from "../Layout";
 import {PropsWithChildren} from "react";
+import {useRouter} from "next/router";
+import NavLink from "./NavLink";
 
 interface DocsLayoutProps extends PropsWithChildren {
     title: string;
@@ -17,6 +19,8 @@ interface DocsLayoutProps extends PropsWithChildren {
 }
 
 export default function Layout({title, desc, children}: DocsLayoutProps) {
+    const router = useRouter();
+
     return (
         <MainLayout title={title} desc={desc}>
             <Grid templateColumns="20% 1fr">
@@ -31,14 +35,13 @@ export default function Layout({title, desc, children}: DocsLayoutProps) {
                                 </AccordionButton>
                             </h2>
                             <AccordionPanel>
-                                <List p={3} rounded="lg" border="2px solid" borderColor="blue.300">
-                                    <ListItem>Installation</ListItem>
-                                </List>
+                                <NavLink isActive={router.pathname === "/docs"}>Installation</NavLink>
+                                <NavLink isActive={router.pathname === "/docs/new"}>What's new?</NavLink>
                             </AccordionPanel>
                         </AccordionItem>
                     </Accordion>
                 </GridItem>
-                <GridItem px={10}>
+                <GridItem px={40}>
                     {children}
                 </GridItem>
             </Grid>

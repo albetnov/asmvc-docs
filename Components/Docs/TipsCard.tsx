@@ -11,7 +11,7 @@ export default function TipsCard({children}: PropsWithChildren) {
               justifyContent="space-between"
               px={10} py={5} gap={10}
               w="full">
-            <AiFillBulb fontSize={50} color="#fbbf24" w="20%"/>
+            <AiFillBulb fontSize={50} color="#fbbf24" width="20%"/>
             <Text fontSize="lg" color="white" w="full">
                 {children}
             </Text>

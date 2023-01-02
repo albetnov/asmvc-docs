@@ -48,8 +48,8 @@ export default function Topbar() {
                     </Heading>
                     <UnorderedList display={{base: "none", lg: "flex"}} gap={{base: 3, lg: 7}}
                                    listStyleType="none">
-                        {links.map((item, i) => (
-                            <NavLink key={i} text={item.text} link={item.link} icon={item.icon}/>
+                        {links.map((item) => (
+                            <NavLink key={item.link} text={item.text} link={item.link} icon={item.icon}/>
                         ))}
                     </UnorderedList>
                 </Flex>
@@ -74,8 +74,8 @@ export default function Topbar() {
                         <DrawerCloseButton/>
                         <DrawerHeader>Menu</DrawerHeader>
                         <DrawerBody display="flex" flexDir="column" gap={3}>
-                            {links.map((item, i) => (
-                                <MobileLink key={i} url={item.link} icon={item.icon}>{item.text}</MobileLink>
+                            {links.map((item) => (
+                                <MobileLink key={item.link} url={item.link} icon={item.icon}>{item.text}</MobileLink>
                             ))}
                         </DrawerBody>
                         <DrawerFooter>

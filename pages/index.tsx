@@ -71,8 +71,8 @@ export default function Home() {
                 <Box as="section" mt={100}>
                     <Heading textAlign="center">Examples</Heading>
                     <Grid templateColumns={{base: "1fr", xl: "repeat(3, 1fr)"}} gap={20} mt={5}>
-                        {[1, 2, 3, 4, 5].map((item, i) => (
-                            <GridItem key={i}>
+                        {[1, 2, 3, 4, 5].map((item) => (
+                            <GridItem key={item}>
                                 <ParallaxBanner
                                     layers={[{image: "https://source.unsplash.com/500x500?code", speed: -20}]}
                                     style={{aspectRatio: "1/1"}}
