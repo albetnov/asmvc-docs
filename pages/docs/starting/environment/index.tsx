@@ -5,6 +5,7 @@ import Section from "../../../../Components/Docs/Section";
 import TipsCard from "../../../../Components/Docs/TipsCard";
 import CodeOneLine from "../../../../Components/Docs/CodeOneLine";
 import CodeMultiLine from "../../../../Components/Docs/CodeMultiLine";
+import ListInfo from "../../../../Components/Docs/ListInfo";
 
 const navigations = [
     {link: "definition", title: "What is Enviroment?"},
@@ -49,17 +50,36 @@ export default function Environment() {
             <CodeMultiLine code={envFile} lang="plain"/>
         </Section>
         <Section navigator={navigations[2]}>
-            <UnorderedList>
-                <ListItem>
-                    <Code>APP_ENV</Code>
-                    <Text>Used to determine the status of application. Development mode will show all the error while
-                        production will hide them with 500.</Text>
-                    <Text>Possible Values:</Text>
-                    <Flex gap={3}>
-                        <Badge>development</Badge>
-                        <Badge>production</Badge>
-                    </Flex>
-                </ListItem>
+            <UnorderedList display="flex" flexDir="column" gap={2}>
+                <ListInfo name="APP_ENV" description="Used to determine the status of application.
+                        Development mode will show all the error while production will hide them with 500."
+                          values={["development", "production"]}
+                />
+                <ListInfo name="APP_MODELS_DRIVER"
+                          description="Determine which model provider you want to use, built in or eloquent.
+                          Changes also applies on CLI File generation as well"
+                          values={["eloquent (Default)", "asmvc"]}
+                />
+                <ListInfo name="APP_VIEW_ENGINE"
+                          description="Determine which view engine provider you want to use, built in or latte"
+                          values={["latte (Default)", "asmvc"]}/>
+                <ListInfo name="ROUTING_DRIVER"
+                          description="Determine which routing driver you want to use, this is just for compatibility
+                          layer. It is therefore not recommended to use other settings than 'new'."
+                          values={["new (Default)", "old"]}/>
+                <ListInfo name="DATABASE_HOST"
+                          description="Your database server host name, it can be localhost or a domain."/>
+                <ListInfo name="DATABASE_USERNAME" description="Your database username credential"/>
+                <ListInfo name="DATABASE_PASSWORD" description="Your database password credential.
+                Can be left empty if you want passwordless login"/>
+                <ListInfo name="DATABASE_NAME" description="The database name your want this app connect to"/>
+                <ListInfo name="SESSION_TYPE" description="ASMVC provides you with two types of session.
+                Either on same machine 'PHP'. Or 'Redis' to multi host support. Your choice."
+                          values={["redis", "php (default)"]}/>
+                <ListInfo name="REDIS_SERVER" description="Just like database host but for Redis"/>
+                <ListInfo name="REDIS_PORT" description="The port of your redis instance"/>
+                <ListInfo name="REDIS_DB_NUMBER" description="The database identifier of your redis"/>
+                <ListInfo name="REDIS_AUTH_PASS" description="The password of your redis instance"/>
             </UnorderedList>
         </Section>
     </Layout>)
