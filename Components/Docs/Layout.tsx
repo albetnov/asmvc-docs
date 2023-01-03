@@ -19,16 +19,17 @@ interface DocsLayoutProps extends PropsWithChildren {
 
 export default function Layout({title, desc, children}: DocsLayoutProps) {
     const router = useRouter();
-    const index = router.pathname === "/docs" || router.pathname.startsWith("/docs/starting/new") ? 0 : 1;
+    const index = router.pathname === "/docs" || router.pathname.startsWith("/docs/starting") ? 0 : 1;
 
     return (
-        <MainLayout title={title ? 'ASMVC Docs | '+ title : "ASMVC Docs"} desc={desc}>
+        <MainLayout title={title ? 'ASMVC Docs | ' + title : "ASMVC Docs"} desc={desc}>
             <Grid templateColumns="20% 1fr">
                 <GridItem borderRight="1px solid" borderColor="gray.300" my={3}>
                     <Accordion defaultIndex={index} allowToggle p={5}>
                         <AccordionLink title="Getting Started" links={[
                             {title: "Installation", href: "/docs"},
-                            {title: "What's new ?", href: "/docs/starting/new"}
+                            {title: "What's new ?", href: "/docs/starting/new"},
+                            {title: "QuickStart: Hello World App", href: "/docs/starting/quickstart"}
                         ]}/>
                     </Accordion>
                 </GridItem>

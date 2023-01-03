@@ -5,7 +5,6 @@ import {
     Text, UnorderedList, useColorMode
 } from "@chakra-ui/react";
 import TipsCard from "../../Components/Docs/TipsCard";
-import NextLink from "next/link";
 import Layout from "../../Components/Docs/Layout";
 import Navigator from "../../Components/Docs/Navigator";
 import Section from "../../Components/Docs/Section";
@@ -13,6 +12,7 @@ import Section from "../../Components/Docs/Section";
 ``
 import Badge from "../../Components/Docs/Badge";
 import CodeOneLine from "../../Components/Docs/CodeOneLine";
+import RouteLink from "../../Components/RouteLink";
 
 const navigations = [
     {link: "definition", title: "What is ASMVC?"},
@@ -31,7 +31,7 @@ export default function Docs() {
                 <Navigator title="This is where you find the full documentation of ASMVC Framework."
                            lists={navigations}/>
                 <TipsCard>
-                    It's a good idea to start with the <Link as={NextLink} href="/guide">Guide</Link> if you still
+                    It&lsquo;s a good idea to start with the <RouteLink href="/guide">Guide</RouteLink> if you still
                     new with the PHP worlds.
                 </TipsCard>
                 <Section title={navigations[0].title} id={navigations[0].link}>
@@ -39,7 +39,8 @@ export default function Docs() {
                         ASMVC is a framework created by {" "}
                         <Link href="https://github.com/albetnov">AlbetNov</Link>.
                         Clearly for fun and of course to develop skill. This framework is developed with <b>fun</b> in
-                        mind and of course <b>for fun</b>. That's why this framework targeted for those who just want to
+                        mind and of course <b>for fun</b>. That&lsquo;s why this framework targeted for those who just
+                        want to
                         try out any random open source project out there, including this framework.
                     </Text>
                 </Section>
