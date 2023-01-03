@@ -99,13 +99,14 @@ export default function Home() {
                             </QuestionAnswer>
                             <QuestionAnswer question="Can I edit Core files?">
                                 Yes you can! ASMVC gives you freedom towards <Code>Core/</Code> file.
-                                That's also the reason why <Code>Core/</Code> exposed
+                                That&apos;s also the reason why <Code>Core/</Code> exposed
                                 and located in the same folder as your projects files. Please feel free to customize
                                 anything you need to built your app.
                             </QuestionAnswer>
                             <QuestionAnswer question="Should I used this framework for production?">
-                                Well ASMVC does have <Code>production</Code> mode. But what does "production" term mean
-                                in here? ASMVC is a framework created with <b>Joy</b> in mind. It's never been for
+                                Well ASMVC does have <Code>production</Code> mode. But what
+                                does &quot;production&quot; term mean
+                                in here? ASMVC is a framework created with <b>Joy</b> in mind. It&apos;s never been for
                                 production nor professional usage. I highly advised you to look up towards framework
                                 like <Link href="https://laravel.com">Laravel</Link> and <Link
                                 href="https://symfony.com">Symfony</Link> if you targeting
@@ -113,8 +114,10 @@ export default function Home() {
                             </QuestionAnswer>
                             <QuestionAnswer question="Will version 4 came out?">
                                 Nope. V3 is the final. Bug Fix or security issues will still maintained though.
-                                However, something like deprecated package will depend on "Will there be any replacement
-                                out there?" If yes, does this replacement easy to migrate to? If not, I think you should
+                                However, something like deprecated package will depend on &quot;Will there be any
+                                replacement
+                                out there?&quot; If yes, does this replacement easy to migrate to? If not, I think you
+                                should
                                 stop using ASMVC then.
                             </QuestionAnswer>
                             <QuestionAnswer question="Where's the old documentation regarding v1 or v2?">
