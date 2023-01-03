@@ -1,7 +1,7 @@
 import {Card, CardBody, Link, List, ListIcon, ListItem, Text} from "@chakra-ui/react";
 import {BsListNested} from "react-icons/bs";
 
-interface NavigatorList {
+export interface NavigatorList {
     link: string;
     title: string;
 }

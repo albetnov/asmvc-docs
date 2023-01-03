@@ -23,19 +23,16 @@ const navigations = [
 
 export default function New() {
     return (
-        <Layout title="What's New in 3.0!">
-            <Box my={10}>
-                <Heading textAlign="center">What&lsquo;s New?</Heading>
-                <Navigator title="See what's new in ASMVC!" lists={navigations}/>
-            </Box>
-            <Section title={navigations[0].title} id={navigations[0].link}>
+        <Layout title="What's New in 3.0!" subTitle="What&lsquo;s New?" navigations={navigations}
+                navigatorTitle="See what's new in ASMVC 3.0!">
+            <Section navigator={navigations[0]}>
                 <Badge colorScheme="red" my={2}>Severity: High</Badge>
                 <Text>
                     We priority type safety in version 3.0. With this changes potentially your app can be affected.
                     We apply most of our types in <Code>Core/</Code> files.
                 </Text>
             </Section>
-            <Section title={navigations[1].title} id={navigations[1].link}>
+            <Section navigator={navigations[1]}>
                 <Badge colorScheme="red" my={2}>Severity: Critical</Badge>
                 <Text>
                     ASMVC not longer namespaced under my name xD. Previously: <Code>Albet\Asmvc\</Code>. Now you get
@@ -44,7 +41,7 @@ export default function New() {
                     find & replace all files and you&lsquo;re done.
                 </Text>
             </Section>
-            <Section title={navigations[2].title} id={navigations[2].link}>
+            <Section navigator={navigations[2]}>
                 <Badge colorScheme="blue" my={2}>Severity: No Effects</Badge>
                 <Text>
                     Previously, ASMVC has both built-in method of CSRF and
@@ -60,7 +57,7 @@ export default function New() {
                 <TipsCard>Deprection: ASMVC Session Driver and Paragonie Anti-CSRF is not longer exist. As well
                     as the CSRF_DRIVER option in .env too will have no effect.</TipsCard>
             </Section>
-            <Section title={navigations[3].title} id={navigations[3].link}>
+            <Section navigator={navigations[3]}>
                 <Badge colorScheme="yellow" my={2}>Severity: Low</Badge>
                 <Text>
                     This severity rated as Low. As this got nothing to do if you used ASMVC wrapper around. However
@@ -70,7 +67,7 @@ export default function New() {
                     works with predis.
                 </Text>
             </Section>
-            <Section title={navigations[4].title} id={navigations[4].link}>
+            <Section navigator={navigations[4]}>
                 <Badge colorScheme="blue" my={2}>Severity: No Effects</Badge>
                 <Text>
                     As of ASMVC 3.0. Migration not longer has a class name. This unfortunately breaks the feature of
@@ -78,7 +75,7 @@ export default function New() {
                     and run your named class based migration normally.
                 </Text>
             </Section>
-            <Section title={navigations[5].title} id={navigations[5].link}>
+            <Section navigator={navigations[5]}>
                 <Badge colorScheme="orange" my={2}>Severity: Medium</Badge>
                 <Text>
                     ASMVC empower {" "}
@@ -89,7 +86,7 @@ export default function New() {
                     old routing. More info can be found <Link href="/">Here</Link>.
                 </Text>
             </Section>
-            <Section title={navigations[6].title} id={navigations[6].link}>
+            <Section navigator={navigations[6]}>
                 <Badge colorScheme="blue" my={2}>Severity: No Effects</Badge>
                 <Text>
                     To complement with PSR-7&lsquo;s HTTP Interface, <Link
@@ -99,7 +96,7 @@ export default function New() {
                     old way is updated to use Laminas Diactoros Api&lsquo;s.
                 </Text>
             </Section>
-            <Section title={navigations[7].title} id={navigations[7].link}>
+            <Section navigator={navigations[7]}>
                 <Badge colorScheme="blue" my={2}>Severity: No Effects</Badge>
                 <Text>
                     To support an even wider range of possibility of dependencies you may want to inject, ASMVC moved to
@@ -109,7 +106,7 @@ export default function New() {
                     href="/">Here</Link>.
                 </Text>
             </Section>
-            <Section title={navigations[8].title} id={navigations[8].link}>
+            <Section navigator={navigations[8]}>
                 <Badge colorScheme="blue" my={2}>Severity: No Effects</Badge>
                 <Text>
                     To help you debug your app more easily, ASMVC brings support of logging powered by
@@ -118,7 +115,7 @@ export default function New() {
                     Of course, detail about logging can be found <Link href="/">here</Link>.
                 </Text>
             </Section>
-            <Section title={navigations[9].title} id={navigations[9].link}>
+            <Section navigator={navigations[9]}>
                 <Badge colorScheme="blue" my={2}>Severity: No Effects</Badge>
                 <Text>
                     Previously, ASMVC provides <Link href="https://getbootstrap.com/">Bootstrap</Link> and Vanilla CSS
@@ -128,7 +125,7 @@ export default function New() {
                     <Code>export:core</Code> Commands.
                 </Text>
             </Section>
-            <Section title={navigations[10].title} id={navigations[10].link}>
+            <Section navigator={navigations[10]}>
                 <Badge colorScheme="blue" my={2}>Severity: No Effects</Badge>
                 <Text>
                     In v3, ASMVC shipped with <Link href="https://packagist.org/packages/symfony/console">Symfony
@@ -140,7 +137,7 @@ export default function New() {
                     Detail regarding commands can be found <Link href="/">here</Link>.
                 </Text>
             </Section>
-            <Section title={navigations[11].title} id={navigations[11].link}>
+            <Section navigator={navigations[11]}>
                 <Badge colorScheme="blue" my={2}>Severity: No Effects</Badge>
                 <Text>
                     Now ASMVC allows you to make a multilingual web app using <Link
@@ -149,7 +146,7 @@ export default function New() {
                     href="/">here</Link>.
                 </Text>
             </Section>
-            <Section title={navigations[12].title} id={navigations[12].link}>
+            <Section navigator={navigations[12]}>
                 <Badge colorScheme="blue" my={2}>Severity: No Effects</Badge>
                 <Text>
                     To improves your web quality in decreasing the possibility of having bugs on your code. ASMVC
@@ -159,7 +156,7 @@ export default function New() {
                     More detail about these two can be found <Link href="/">here</Link>.
                 </Text>
             </Section>
-            <Section title={navigations[13].title} id={navigations[13].link}>
+            <Section navigator={navigations[13]}>
                 <Badge colorScheme="blue" my={2}>Severity: No Effects</Badge>
                 <Text>
                     To help you building a REST App. ASMVC provides REST interfaces to work easily with technologies

@@ -45,12 +45,9 @@ const helloRoute = `$router->get('/hello', function() {
 
 export default function QuickStart() {
     return (
-        <Layout title="QuickStart">
-            <Box my={10}>
-                <Heading textAlign="center">Quick Start: Creating Hello World App</Heading>
-                <Navigator title="Creating Hello World App Contents" lists={navigations}/>
-            </Box>
-            <Section title={navigations[0].title} id={navigations[0].link}>
+        <Layout title="QuickStart" subTitle="Quick Start: Creating Hello World App" navigations={navigations}
+                navigatorTitle="Creating Hello World app contents">
+            <Section navigator={navigations[0]}>
                 <Text>
                     Before dive in to creating the app using this framework. The first thing you need to do is obviously
                     installing the framework. Doing so is as simple as snapping a finger. Simply copy below line to
@@ -66,28 +63,39 @@ export default function QuickStart() {
                     Section</RouteLink> may right
                     for you.</Text>
             </Section>
-            <Section title={navigations[1].title} id={navigations[1].link}>
+            <Section navigator={navigations[1]}>
                 <Text>
                     If the install succeed, you can open <Code>hello-world</Code> folder and should see the followings
                     structure:
                 </Text>
                 <List>
-                    <Folder>Cache/ - Is where all cache files located. Excluding Views cache.</Folder>
-                    <Folder>Commands/ - Your custom commands</Folder>
-                    <Folder>Config/ - Application config file</Folder>
-                    <Folder>Controllers/ - Your controllers</Folder>
-                    <Folder>Core/ - The framework</Folder>
-                    <Folder>Database/ - Your migrations/seeders file</Folder>
-                    <Folder>Languages/ - Your languages</Folder>
-                    <Folder>Middleware/ - Your middlewares</Folder>
-                    <Folder>Models/ - Your models</Folder>
-                    <Folder>Routes/ - Your routes (including api and web)</Folder>
-                    <Folder>Tests/ - Your tests file</Folder>
-                    <Folder>Views/ - Your views (including latte cache)</Folder>
-                    <File>.htaccess - The config for apache.</File>
+                    <OpenFolder>
+                        App/ - The app directory (Where you code)
+                        <List ml={5}>
+                            <Folder>Cache/ - Is where all cache files located. Excluding Views cache.</Folder>
+                            <Folder>Commands/ - Your custom commands</Folder>
+                            <Folder>Config/ - Application config file</Folder>
+                            <Folder>Controllers/ - Your controllers</Folder>
+                            <Folder>Core/ - The framework</Folder>
+                            <Folder>Database/ - Your migrations/seeders file</Folder>
+                            <Folder>Languages/ - Your languages</Folder>
+                            <Folder>Middleware/ - Your middlewares</Folder>
+                            <Folder>Models/ - Your models</Folder>
+                            <Folder>Routes/ - Your routes (including api and web)</Folder>
+                            <Folder>Tests/ - Your tests file</Folder>
+                            <Folder>Views/ - Your views (including latte cache)</Folder>
+                            <File>.htaccess - The config for apache.</File>
+                        </List>
+                    </OpenFolder>
+                    <Folder>public/ - The file that&apos;s exposed to end user.</Folder>
+                    <File>.env.example - <RouteLink href="/docs/starting/environment">Environment</RouteLink></File>
+                    <File>asmvc - The ASMVC Cli</File>
+                    <File>composer.json - package information</File>
+                    <File>rector.php - Rector configuration file</File>
+                    <File>tailwind.config.js - Tailwind Configuration file</File>
                 </List>
             </Section>
-            <Section title={navigations[2].title} id={navigations[2].link}>
+            <Section navigator={navigations[2]}>
                 <Text>Then, how do we display Hello World? Simple! First of all, you need to go
                     to <Code>routes.php</Code> located in:</Text>
                 <List>
