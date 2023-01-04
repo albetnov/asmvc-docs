@@ -18,21 +18,52 @@ interface DocsLayoutProps extends PropsWithChildren {
     navigatorTitle: string;
 }
 
-const routes = [
-    {title: "Installation", href: "/docs"},
-    {title: "What's new ?", href: "/docs/starting/new"},
-    {title: "QuickStart: Hello World App", href: "/docs/starting/quickstart"},
-    {title: "The Environment", href: "/docs/starting/environment"},
-    {title: "The CLI", href: "/docs/basics/commands"}
+interface RouteSchema {
+    title: string;
+    href: string;
+}
+
+interface RoutesSchema {
+    definition: string;
+    identifier: string[] | string;
+    data: RouteSchema[]
+}
+
+const routes: RoutesSchema[] = [
+    {
+        definition: "Getting Started", identifier: ["/docs", "/docs/starting/new"], data: [
+            {title: "Installation", href: "/docs"},
+            {title: "What's new ?", href: "/docs/starting/new"},
+            {title: "QuickStart: Hello World App", href: "/docs/starting/quickstart"},
+            {title: "The Environment", href: "/docs/starting/environment"},
+        ]
+    },
+    {
+        definition: "Jump to Basics", identifier: "/docs/basics", data: [
+            {title: "The CLI", href: "/docs/basics/commands"}
+        ]
+    }
 ];
+
+const indexedRoutes = routes.map(item => item.data).flat();
 
 export default function Layout({title, desc, children, navigations, subTitle, navigatorTitle}: DocsLayoutProps) {
     const router = useRouter();
     const determineRoute = () => {
-        if (router.pathname.startsWith("/docs/basics")) {
-            return 1;
-        }
-        return 0;
+        let result = 0;
+        routes.forEach((route, i) => {
+            if (Array.isArray(route.identifier)) {
+                route.identifier.forEach(item => {
+                    if (router.pathname.startsWith(item)) {
+                        result = i;
+                    }
+                })
+            } else if (router.pathname.startsWith(route.identifier)) {
+                result = i;
+            }
+        })
+
+        return result;
     }
 
     const [hasPrevious, setHasPrevious] = useState(false);
@@ -40,26 +71,27 @@ export default function Layout({title, desc, children, navigations, subTitle, na
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
-        const index = routes.findIndex(item => item.href === router.pathname);
+        const index = indexedRoutes.findIndex(item => item.href === router.pathname);
         if (index > 0) {
             setHasPrevious(true);
         }
-
-        if (index === routes.length - 1) {
+        console.log(index, indexedRoutes.length);
+        if (index >= indexedRoutes.length - 1) {
             setHasNext(false);
         }
 
         setCurrentIndex(index);
-    }, []);
+    }, [router.pathname]);
 
     const index = determineRoute();
+    console.log(index);
 
     const prevHandler = async () => {
-        await router.push(routes[currentIndex - 1].href);
+        await router.push(indexedRoutes[currentIndex - 1].href);
     }
 
     const nextHandler = async () => {
-        await router.push(routes[currentIndex + 1].href);
+        await router.push(indexedRoutes[currentIndex + 1].href);
     }
 
     return (
@@ -67,8 +99,8 @@ export default function Layout({title, desc, children, navigations, subTitle, na
             <Grid templateColumns="20% 1fr">
                 <GridItem borderRight="1px solid" borderColor="gray.300" my={3}>
                     <Accordion defaultIndex={index} allowToggle p={5}>
-                        <AccordionLink title="Getting Started" links={routes.slice(0, 4)}/>
-                        <AccordionLink title="Jump To Basics" links={routes.slice(4, 5)}/>
+                        {routes.map(item => <AccordionLink key={item.definition} title={item.definition}
+                                                           links={item.data}/>)}
                     </Accordion>
                 </GridItem>
                 <GridItem px={40}>
@@ -83,14 +115,14 @@ export default function Layout({title, desc, children, navigations, subTitle, na
                                     gap={3} px={10} py={14}
                                     rounded="lg">
                                 <BsChevronDoubleLeft fontSize={40}/>
-                                <Text fontSize="xl">Previous: {routes[currentIndex - 1].title}</Text>
+                                <Text fontSize="xl">Previous: {indexedRoutes[currentIndex - 1].title}</Text>
                             </Button>
                         ) : <Box/>}
                         {hasNext ? (
                             <Button onClick={nextHandler} variant="outline" colorScheme="blue" alignItems="center"
                                     gap={3} px={10} py={14}
                                     rounded="lg">
-                                <Text fontSize="xl">Next: {routes[currentIndex + 1].title}</Text>
+                                <Text fontSize="xl">Next: {indexedRoutes[currentIndex + 1].title}</Text>
                                 <BsChevronDoubleRight fontSize={40}/>
                             </Button>
                         ) : <Box/>}
