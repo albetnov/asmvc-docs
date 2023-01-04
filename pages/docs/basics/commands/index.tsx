@@ -1,6 +1,6 @@
 import Layout from "../../../../Components/Docs/Layout";
 import Section from "../../../../Components/Docs/Section";
-import {Box, Button, Code, Flex, Link, ListItem, Text, UnorderedList} from "@chakra-ui/react";
+import {Box, Button, Code, Flex, Link, ListItem, Text, UnorderedList, useColorMode} from "@chakra-ui/react";
 import CodeOneLine from "../../../../Components/Docs/CodeOneLine";
 import {MdClose, MdMinimize, MdWindow} from "react-icons/md";
 import ListInfo from "../../../../Components/Docs/ListInfo";
@@ -12,6 +12,10 @@ const navigations = [
 ];
 
 export default function Commands() {
+    const {colorMode} = useColorMode();
+
+    const isLight = colorMode === 'light';
+
     return (
         <Layout title="Commands Interface" subTitle="Everything About ASMVC CLI" navigations={navigations}
                 navigatorTitle="ASMVC Cli Contents">
@@ -24,20 +28,22 @@ export default function Commands() {
                     command using:</Text>
                 <CodeOneLine text="php asmvc list"/>
                 <Text>You should getting this output:</Text>
-                <Box roundedTop="lg" border="1px solid" my={5} borderColor="gray.600">
-                    <Flex roundedTop="lg" bg="gray.600" py={1} px={5} justifyContent="space-between"
+                <Box roundedTop="lg" border="1px solid" my={5} borderColor={isLight ? "gray.800" : "gray.600"}>
+                    <Flex roundedTop="lg" bg={isLight ? "gray.800" : "gray.600"} py={1} px={5}
+                          justifyContent="space-between"
                           alignItems="center">
-                        <Text fontSize="lg">Terminal</Text>
+                        <Text fontSize="lg" color="white">Terminal</Text>
                         <Flex>
-                            <Button rounded="full" bg="none" p={3}>
-                                <MdMinimize/>
+                            <Button rounded="full" bg="none" p={3} _hover={{bg: isLight ? "gray.700" : "gray.500"}}>
+                                <MdMinimize color="white"/>
                             </Button>
-                            <Button rounded="full" bg="none" p={3}>
-                                <MdWindow/>
+                            <Button rounded="full" bg="none" p={3} _hover={{bg: isLight ? "gray.700" : "gray.500"}}>
+                                <MdWindow color="white"/>
                             </Button>
                             <Button rounded="full" bg="none" p={3} colorScheme="red"
-                                    color="white">
-                                <MdClose/>
+                                    _hover={{bg: isLight ? "red.700" : "red.500"}}
+                            >
+                                <MdClose color="white"/>
                             </Button>
                         </Flex>
                     </Flex>
