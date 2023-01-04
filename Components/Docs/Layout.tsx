@@ -40,7 +40,8 @@ const routes: RoutesSchema[] = [
     },
     {
         definition: "Jump to Basics", identifier: "/docs/basics", data: [
-            {title: "The CLI", href: "/docs/basics/commands"}
+            {title: "The CLI", href: "/docs/basics/commands"},
+            {title: "Configurations", href: "/docs/basics/configs"}
         ]
     }
 ];
@@ -84,7 +85,6 @@ export default function Layout({title, desc, children, navigations, subTitle, na
     }, [router.pathname]);
 
     const index = determineRoute();
-    console.log(index);
 
     const prevHandler = async () => {
         await router.push(indexedRoutes[currentIndex - 1].href);
@@ -112,7 +112,7 @@ export default function Layout({title, desc, children, navigations, subTitle, na
                     <Flex mt={100} justifyContent="space-between">
                         {hasPrevious ? (
                             <Button onClick={prevHandler} variant="outline" colorScheme="blue" alignItems="center"
-                                    gap={3} px={10} py={14}
+                                    gap={3} px={7} py={10}
                                     rounded="lg">
                                 <BsChevronDoubleLeft fontSize={40}/>
                                 <Text fontSize="xl">Previous: {indexedRoutes[currentIndex - 1].title}</Text>
@@ -120,7 +120,7 @@ export default function Layout({title, desc, children, navigations, subTitle, na
                         ) : <Box/>}
                         {hasNext ? (
                             <Button onClick={nextHandler} variant="outline" colorScheme="blue" alignItems="center"
-                                    gap={3} px={10} py={14}
+                                    gap={3} px={7} py={10}
                                     rounded="lg">
                                 <Text fontSize="xl">Next: {indexedRoutes[currentIndex + 1].title}</Text>
                                 <BsChevronDoubleRight fontSize={40}/>
