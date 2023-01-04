@@ -1,6 +1,7 @@
 const navigations = [
     {link: "configuration", title: "The Routing"},
-    {link: "fast-route", title: "The New One"}
+    {link: "fast-route", title: "The New One"},
+    {link: "native-route", title: "The Old One"}
 ];
 
 const routesPhp = `<?php
@@ -45,4 +46,6 @@ const viewRoute = `return static function (Route $router, MiddlewareRouteBuilder
     $vwb->put('home', ['name' => 'asep', 'any' => ['data', 'data2']]));
 };`;
 
-export {navigations, viewRoute, completeRoute, routesPhp};
+const envOldRouter = `ROUTING_DRIVER=old`;
+
+export {navigations, viewRoute, completeRoute, routesPhp, envOldRouter};

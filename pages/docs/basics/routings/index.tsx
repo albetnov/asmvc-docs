@@ -1,12 +1,13 @@
 import Layout from "../../../../Components/Docs/Layout";
 import Section from "../../../../Components/Docs/Section";
-import {Code, Heading, List, Text, UnorderedList} from "@chakra-ui/react";
+import {Code, Heading, List, ListItem, Text, UnorderedList} from "@chakra-ui/react";
 import ListInfo from "../../../../Components/Docs/ListInfo";
 import TipsCard from "../../../../Components/Docs/TipsCard";
 import OpenFolder from "../../../../Components/Docs/OpenFolder";
 import File from "../../../../Components/Docs/File";
 import CodeMultiLine from "../../../../Components/Docs/CodeMultiLine";
-import {navigations, routesPhp, completeRoute, viewRoute} from "./routingModel";
+import {navigations, routesPhp, completeRoute, viewRoute, envOldRouter} from "./routingModel";
+import CodeOneLine from "../../../../Components/Docs/CodeOneLine";
 
 export default function Routings() {
     return <Layout subTitle="Routing Basics" navigations={navigations} navigatorTitle="How to do routing contents">
@@ -90,6 +91,76 @@ export default function Routings() {
                 Example Usage:
             </Text>
             <CodeMultiLine code={viewRoute}/>
+        </Section>
+        <Section navigator={navigations[2]}>
+            <Text>The Old Routing Engine is not set by default. Therefore setting the driver to corresponding old driver
+                is required. To setup a old routing engine as driver. You can change
+                your <Code>ROUTING_DRIVER</Code> in your <Code>.env</Code> file to:</Text>
+            <CodeMultiLine code={envOldRouter}/>
+            <Text>After that, you need to reboot your application by stopping and starting the app again. Or use:</Text>
+            <CodeOneLine text="php asmvc serve"/>
+            <Text>When done, you will see an old <Code>url.php</Code> is generated for you.</Text>
+            <List my={3}>
+                <OpenFolder>
+                    App/
+                    <List ml={2}>
+                        <OpenFolder>
+                            Routes/
+                            <List ml={2}>
+                                <File>api.php - unused</File>
+                                <File>routes.php - unused</File>
+                                <File>url.php (this)</File>
+                            </List>
+                        </OpenFolder>
+                    </List>
+                </OpenFolder>
+            </List>
+            <TipsCard>Unlike new routing, the old one must be registered under <Code>url.php</Code> file. And therefore
+                has no support for Restful API as well.</TipsCard>
+            <Heading size="lg">Using Old Router</Heading>
+            <Text>Usage of old router is still the same as ever. But please do note that <Code>Route::inline</Code>
+                is removed and therefore won&lsquo;t be available to use.</Text>
+            <UnorderedList>
+                <ListItem>
+                    <Text fontSize="lg">Parameters</Text>
+                    <Text><Code>Route::PARAMETER</Code> is also removed as well. Instead in order to use parameter you
+                        can append <Code>:</Code> to a string. Example: </Text>
+                    <CodeOneLine text="Route::add('/product/:id', fn($id) => var_dump($id))"/>
+                </ListItem>
+                <ListItem>
+                    <Text fontSize="lg">Available Methods</Text>
+                    <Text>This is the list of available methods you can use to declare your route:</Text>
+                    <UnorderedList>
+                        <ListInfo name="add"
+                                  description="You can add a route definition for http method using this method"/>
+                        <ListInfo name="view" description="You can add a route definition for view using this method"/>
+                    </UnorderedList>
+                </ListItem>
+                <ListItem>
+                    <Text fontSize="lg">The Parameters</Text>
+                    <CodeOneLine
+                        text="Route::add($path, $closureOrArrayOfControllerAndMethod, $httpMethod, $middlewareClass)"/>
+                    <UnorderedList>
+                        <ListInfo name="$path" description="Stands for your url path (E.g. '/')"/>
+                        <ListInfo name="$closureOrArrayOfControllerAndMethod" description="Can be either closure function or
+                an array where first index is a controller namespace and second is the method to execute.
+                (E.g. [HomeController::class, 'index'])"/>
+                        <ListInfo name="$httpMethod" description="Define the HTTP Method to use"/>
+                        <ListInfo name="$middlewareClass" description="A namespace of middleware, with limitations of
+                        arguments binding support"/>
+                    </UnorderedList>
+                    <CodeOneLine text="Route::view($path, $arrays, $middlewareClass)"/>
+                    <UnorderedList>
+                        <ListInfo name="$path" description="Stands for your url path (E.g. '/')"/>
+                        <ListInfo name="arrays" description="This parameter is required. This parameter could be a string or array.
+                        If you only need a views then use string with starting point in App/Views. Example: view.
+                        Location: App/Views/view.php. If you also need a view data then specify it
+                        using array by: [view, ['title' => 'hello']]."/>
+                        <ListInfo name="$middlewareClass" description="A namespace of middleware, with limitations of
+                        arguments binding support"/>
+                    </UnorderedList>
+                </ListItem>
+            </UnorderedList>
         </Section>
     </Layout>
 }
