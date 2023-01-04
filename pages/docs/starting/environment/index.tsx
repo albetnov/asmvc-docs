@@ -13,9 +13,9 @@ export default function Environment() {
                     navigatorTitle="All about environments">
         <Section navigator={navigations[0]}>
             <Text>Environment is a file used to define and configure the ASMVC framework.</Text>
-            <TipsCard>Enviroment and Configs is not the same thing. Although above stated that environment used to
+            <TipsCard>Environment and Configs is not the same thing. Although above stated that environment used to
                 define and configure ASMVC. It&apos;s basically mean the configuration concerning environment. Nothing
-                else. Like Database connection cresidentials for instance.</TipsCard>
+                else. Like Database connection credentials for instance.</TipsCard>
         </Section>
         <Section navigator={navigations[1]}>
             <Text>In fresh install, you won&apos;t get any <Code>.env</Code> file. Instead, they must be copied
