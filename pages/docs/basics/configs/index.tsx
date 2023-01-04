@@ -6,25 +6,7 @@ import Folder from "../../../../Components/Docs/Folder";
 import File from "../../../../Components/Docs/File";
 import TipsCard from "../../../../Components/Docs/TipsCard";
 import CodeMultiLine from "../../../../Components/Docs/CodeMultiLine";
-
-const navigations = [
-    {link: "definition", title: "What is Configuration?"},
-    {link: "config-helper", title: "The Config Helper"},
-    {link: "shortcut", title: "Provider Config Shortcut"},
-    {link: "own-config", title: "Defining your own config"}
-];
-
-const sessionConfig = `// session.php
-
-<?php
-
-return [
-    'type' => env('SESSION_TYPE', 'php'),
-    'ip-validation' => env('SESSION_IP_VALIDATION', false),
-    'session-basic-validation' => env('SESSION_VALIDATION', true),
-    'secure' => env('SESSION_SECURE', false)
-];
-`;
+import {navigations, sessionConfig} from "./configModel";
 
 export default function Configs() {
     return <Layout title="Configuration" subTitle="ASMVC Configuration" navigations={navigations}

@@ -41,7 +41,8 @@ const routes: RoutesSchema[] = [
     {
         definition: "Jump to Basics", identifier: "/docs/basics", data: [
             {title: "The CLI", href: "/docs/basics/commands"},
-            {title: "Configurations", href: "/docs/basics/configs"}
+            {title: "Configurations", href: "/docs/basics/configs"},
+            {title: "Routing", href: "/docs/basics/routings"}
         ]
     }
 ];

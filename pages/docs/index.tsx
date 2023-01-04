@@ -12,11 +12,7 @@ import Section from "../../Components/Docs/Section";
 import Badge from "../../Components/Docs/Badge";
 import CodeOneLine from "../../Components/Docs/CodeOneLine";
 import RouteLink from "../../Components/RouteLink";
-
-const navigations = [
-    {link: "definition", title: "What is ASMVC?"},
-    {link: "installation", title: "Installation"}
-]
+import {navigations} from "./docsModel";
 
 export default function Docs() {
     const {colorMode} = useColorMode();

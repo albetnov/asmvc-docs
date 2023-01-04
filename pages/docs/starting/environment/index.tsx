@@ -1,33 +1,12 @@
 import Layout from "../../../../Components/Docs/Layout";
-import {Badge, Box, Code, Flex, Heading, ListItem, Text, UnorderedList} from "@chakra-ui/react";
-import Navigator from "../../../../Components/Docs/Navigator";
+import {Code, Text, UnorderedList} from "@chakra-ui/react";
 import Section from "../../../../Components/Docs/Section";
 import TipsCard from "../../../../Components/Docs/TipsCard";
 import CodeOneLine from "../../../../Components/Docs/CodeOneLine";
 import CodeMultiLine from "../../../../Components/Docs/CodeMultiLine";
 import ListInfo from "../../../../Components/Docs/ListInfo";
+import {envFile, navigations} from "./environmentModel";
 
-const navigations = [
-    {link: "definition", title: "What is Enviroment?"},
-    {link: "the-file", title: "The .env File"},
-    {link: "what-is-that", title: "Definitions of each line"}
-];
-
-const envFile = `APP_ENV=development
-APP_MODELS_DRIVER=asmvc
-APP_VIEW_ENGINE=latte
-ROUTING_DRIVER=new
-
-DATABASE_HOST=localhost
-DATABASE_USERNAME=root
-DATABASE_PASSWORD=
-DATABASE_NAME=asmvc
-
-SESSION_TYPE=php
-REDIS_SERVER=127.0.0.1
-REDIS_PORT=6379
-REDIS_DB_NUMBER=0
-REDIS_AUTH_PASS=`;
 
 export default function Environment() {
     return (<Layout subTitle="The Environment" title="Environment" navigations={navigations}
