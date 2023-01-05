@@ -4,8 +4,7 @@ import {
     DrawerContent, DrawerFooter, DrawerHeader,
     DrawerOverlay,
     Flex,
-    Heading,
-    UnorderedList, useColorMode,
+    UnorderedList,
     useDisclosure
 } from "@chakra-ui/react";
 import NavLink from "./NavLink";
@@ -13,6 +12,8 @@ import {FiCompass, FiDatabase, FiExternalLink, FiMenu, FiMoon, FiSun} from "reac
 import {useRef} from "react";
 import MobileLink from "./MobileLink";
 import Link from "next/link";
+import Logo from "../Logo";
+import SwitchMode from "./SwithMode";
 
 const links = [
     {
@@ -36,16 +37,12 @@ export default function Topbar() {
     const {isOpen, onClose, onOpen} = useDisclosure();
     const btnRef = useRef<HTMLButtonElement>(null);
 
-    const {colorMode, toggleColorMode} = useColorMode();
-
     return (
         <header>
             <Flex justifyContent="space-around" shadow="base" alignItems="center">
 
                 <Flex p={5} alignItems="center" gap={{base: 5, lg: 10}}>
-                    <Heading fontSize={{base: "xl", lg: "4xl"}} fontWeight="bold">
-                        <Link href="/">ASMVC</Link>
-                    </Heading>
+                    <Logo/>
                     <UnorderedList display={{base: "none", lg: "flex"}} gap={{base: 3, lg: 7}}
                                    listStyleType="none">
                         {links.map((item) => (
@@ -64,9 +61,7 @@ export default function Topbar() {
                         <FiMenu fontSize={27}/>
                     </Button>
 
-                    <Button p={3} bg="transparent" rounded="full" onClick={toggleColorMode}>
-                        {colorMode === 'light' ? <FiMoon fontSize={20}/> : <FiSun fontSize={20}/>}
-                    </Button>
+                    <SwitchMode/>
                 </Flex>
                 <Drawer isOpen={isOpen} onClose={onClose} finalFocusRef={btnRef}>
                     <DrawerOverlay/>
