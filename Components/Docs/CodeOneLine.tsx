@@ -1,5 +1,5 @@
 import {PropsWithChildren} from "react";
-import {Button, Code, Text} from "@chakra-ui/react";
+import {Box, Button, Code, Text} from "@chakra-ui/react";
 import {FiClipboard} from "react-icons/fi";
 import {toast} from "../../Utils/toast";
 
@@ -8,18 +8,28 @@ interface CodeOneLineProps {
 }
 
 export default function CodeOneLine({text}: CodeOneLineProps) {
-    const onCopy = () => {
+    const onCopy = async () => {
+        await window.navigator.clipboard.writeText(text);
+
         toast({
             title: "Copied to clipboard!",
             duration: 5000,
             isClosable: true,
             status: "success",
             position: "top-right"
-        })
-        window.navigator.clipboard.writeText(text)
+        });
     }
 
-    return <Code my={5} px={5} py={5} rounded="lg" display="flex" justifyContent="space-between"
-                 alignItems="center"><Text>{text}</Text> <Button onClick={onCopy} variant="unstyled"><FiClipboard
-        fontSize={20}/></Button></Code>
+    return (
+        <Code my={5} p={{base: 1, md: 5}} rounded="lg" display="flex" justifyContent="space-between"
+              alignItems="center" w="full">
+            <Text overflowWrap="break-word">{text}</Text>
+            <Button
+                onClick={onCopy}
+                variant="unstyled">
+                <FiClipboard
+                    fontSize={20}/>
+            </Button>
+        </Code>
+    )
 }

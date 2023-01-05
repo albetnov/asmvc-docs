@@ -24,6 +24,7 @@ import Logo from "../Logo";
 import SwitchMode from "../Topbar/SwithMode";
 import {DocsLayoutProps, indexedRoutes, routes, useLayoutModel} from "./layoutModel";
 import RouteLink from "../RouteLink";
+import Head from "next/head";
 
 
 export default function Layout({title, desc, children, navigations, subTitle, navigatorTitle}: DocsLayoutProps) {
@@ -44,6 +45,12 @@ export default function Layout({title, desc, children, navigations, subTitle, na
 
     return (
         <>
+            <Head>
+                <title>{title ? "ASMVC Docs | " + title : "ASMVC Documentation"}</title>
+                <meta name="description" content={desc ? desc : "A documentation for ASMVC"}/>
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                <link rel="icon" href="/favicon.ico"/>
+            </Head>
             <header>
                 <Flex shadow="base" p={10} justifyContent="space-between">
                     <Logo/>

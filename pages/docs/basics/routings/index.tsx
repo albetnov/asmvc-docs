@@ -10,7 +10,8 @@ import {navigations, routesPhp, completeRoute, viewRoute, envOldRouter} from "./
 import CodeOneLine from "../../../../Components/Docs/CodeOneLine";
 
 export default function Routings() {
-    return <Layout subTitle="Routing Basics" navigations={navigations} navigatorTitle="How to do routing contents">
+    return <Layout title="The Router" subTitle="Routing Basics" navigations={navigations}
+                   navigatorTitle="How to do routing contents">
         <Section navigator={navigations[0]}>
             <Text>Being an MVC Traditional PHP Framework make it important to have a routing. ASMVC provide you not one
                 but two way to do routing. Of course, these way has their own advantages and disadvantages. But

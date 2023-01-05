@@ -1,4 +1,4 @@
-import {Button, Code, useColorMode} from "@chakra-ui/react";
+import {Box, Button, Code, useColorMode} from "@chakra-ui/react";
 import {toast} from "../../Utils/toast";
 import {FiClipboard} from "react-icons/fi";
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
@@ -13,7 +13,9 @@ interface CodeMultiLineProps {
 export default function CodeMultiLine({code, lang = "php"}: CodeMultiLineProps) {
     const {colorMode} = useColorMode();
 
-    const onCopy = () => {
+    const onCopy = async () => {
+        await window.navigator.clipboard.writeText(code);
+        
         toast({
             title: "Copied to clipboard!",
             duration: 5000,
@@ -21,13 +23,15 @@ export default function CodeMultiLine({code, lang = "php"}: CodeMultiLineProps) 
             status: "success",
             position: "top-right"
         });
-        window.navigator.clipboard.writeText(code)
     }
 
     return (
-        <Code p={3} my={5} rounded="lg" position="relative">
+        <Code p={3} my={5} rounded="lg" position="relative" maxW="87vw">
             <SyntaxHighlighter language={lang}
-                               style={colorMode === 'light' ? duotoneLight : dracula}>{code}</SyntaxHighlighter>
+                               style={colorMode === 'light' ? duotoneLight : dracula} showLineNumbers
+                               wrapLines
+                               showInlineLineNumbers
+            >{code}</SyntaxHighlighter>
             <Button onClick={onCopy} position="absolute" right={-3} top={1} variant="unstyled"><FiClipboard
                 fontSize={20}/></Button>
         </Code>

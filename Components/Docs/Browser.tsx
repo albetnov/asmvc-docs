@@ -14,10 +14,11 @@ export default function Browser() {
 
     const isLight = colorMode === 'light';
 
-    return <Box rounded="lg" border="1px solid" borderColor="gray.600">
+    return <Box rounded="lg" border="1px solid" borderColor="gray.600" overflowX="hidden" maxW="87vw">
         <Flex justifyContent="space-between" alignItems="center">
             <Flex alignItems="center" gap={3}>
-                <Flex bg={isLight ? "gray.200" : "gray.600"} p={3} roundedTop="lg" alignItems="center" gap={2}>
+                <Flex bg={isLight ? "gray.200" : "gray.600"} p={3} roundedTop="lg"
+                      alignItems="center" gap={2}>
                     <AiFillFile/> <Text>localhost:9090/hello</Text> <AiOutlineClose/>
                 </Flex>
                 <Button rounded="full" p={3}>
