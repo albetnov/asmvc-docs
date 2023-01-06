@@ -9,7 +9,7 @@ import OpenFolder from "../../../../Components/Docs/OpenFolder";
 import CodeMultiLine from "../../../../Components/Docs/CodeMultiLine";
 import Browser from "../../../../Components/Docs/Browser";
 import TipsCard from "../../../../Components/Docs/TipsCard";
-import {navigations, routes, helloRoute} from "./quickStartModel";
+import {navigations, routes, helloRoute} from "../../../../Models/Starting/quickStartModel";
 
 export default function QuickStart() {
     return (

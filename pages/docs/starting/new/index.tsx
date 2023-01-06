@@ -2,7 +2,7 @@ import Layout from "../../../../Components/Docs/Layout";
 import Section from "../../../../Components/Docs/Section";
 import {Badge, Code, Link, Text} from "@chakra-ui/react";
 import TipsCard from "../../../../Components/Docs/TipsCard";
-import {navigations} from "./newModel";
+import {navigations} from "../../../../Models/Starting/newModel";
 
 export default function New() {
     return (

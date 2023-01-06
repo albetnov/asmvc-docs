@@ -12,7 +12,7 @@ import Section from "../../Components/Docs/Section";
 import Badge from "../../Components/Docs/Badge";
 import CodeOneLine from "../../Components/Docs/CodeOneLine";
 import RouteLink from "../../Components/RouteLink";
-import {navigations} from "./docsModel";
+import {navigations} from "../../Models/docsModel";
 
 export default function Docs() {
     const {colorMode} = useColorMode();

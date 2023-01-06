@@ -6,7 +6,7 @@ import TipsCard from "../../../../Components/Docs/TipsCard";
 import OpenFolder from "../../../../Components/Docs/OpenFolder";
 import File from "../../../../Components/Docs/File";
 import CodeMultiLine from "../../../../Components/Docs/CodeMultiLine";
-import {navigations, routesPhp, completeRoute, viewRoute, envOldRouter} from "./routingModel";
+import {navigations, routesPhp, completeRoute, viewRoute, envOldRouter} from "../../../../Models/Basics/routingModel";
 import CodeOneLine from "../../../../Components/Docs/CodeOneLine";
 
 export default function Routings() {

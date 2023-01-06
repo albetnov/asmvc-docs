@@ -5,7 +5,7 @@ import CodeOneLine from "../../../../Components/Docs/CodeOneLine";
 import {MdClose, MdMinimize, MdWindow} from "react-icons/md";
 import ListInfo from "../../../../Components/Docs/ListInfo";
 import TipsCard from "../../../../Components/Docs/TipsCard";
-import {navigations, terminalText} from "./commandModel";
+import {navigations, terminalText} from "../../../../Models/Basics/commandModel";
 
 export default function Commands() {
     const {colorMode} = useColorMode();

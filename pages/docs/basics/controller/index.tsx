@@ -2,7 +2,12 @@ import Layout from "../../../../Components/Docs/Layout";
 import Section from "../../../../Components/Docs/Section";
 import {Code, Heading, Link, List, ListItem, Text, UnorderedList} from "@chakra-ui/react";
 import CodeMultiLine from "../../../../Components/Docs/CodeMultiLine";
-import {controllerFile, navigations, newRouterController, oldRouterController} from "./controllerModel";
+import {
+    controllerFile,
+    navigations,
+    newRouterController,
+    oldRouterController
+} from "../../../../Models/Basics/controllerModel";
 import CodeOneLine from "../../../../Components/Docs/CodeOneLine";
 import TipsCard from "../../../../Components/Docs/TipsCard";
 import OpenFolder from "../../../../Components/Docs/OpenFolder";

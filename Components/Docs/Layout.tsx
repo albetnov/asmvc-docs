@@ -12,13 +12,13 @@ import {
     Flex,
     Grid,
     GridItem,
-    Heading, List, ListItem,
+    Heading, List, ListIcon, ListItem,
     Text,
     UnorderedList,
 } from "@chakra-ui/react";
 import AccordionLink from "./AccordionLink";
 import Navigator, {NavigatorList} from "./Navigator";
-import {FiMenu} from "react-icons/fi";
+import {FiChevronRight, FiMenu} from "react-icons/fi";
 import Footer from "../Topbar/Footer";
 import Logo from "../Logo";
 import SwitchMode from "../Topbar/SwithMode";
@@ -70,9 +70,11 @@ export default function Layout({title, desc, children, navigations, subTitle, na
                                                 <List mt={1}>
                                                     {item.data.map(route => (
                                                         <ListItem key={route.href}>
+                                                            {router.pathname === route.href &&
+                                                                <ListIcon as={FiChevronRight}/>
+                                                            }
                                                             <RouteLink
                                                                 href={route.href}>
-                                                                {router.pathname === route.href ? ">>" : " "}
                                                                 {route.title}
                                                             </RouteLink>
                                                         </ListItem>

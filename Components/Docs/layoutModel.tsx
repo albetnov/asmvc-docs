@@ -75,7 +75,7 @@ function useLayoutModel() {
         if (index > 0) {
             setHasPrevious(true);
         }
-        console.log(index, indexedRoutes.length);
+        
         if (index >= indexedRoutes.length - 1) {
             setHasNext(false);
         }

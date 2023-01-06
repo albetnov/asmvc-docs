@@ -6,7 +6,7 @@ import {
     envForEloquentModel, first, fullJoin, getUsage, innerJoin, insert, leftJoin, limit,
     modelExample,
     navigations, orderBy, orderByAsc, orderByDesc, orWhere, rightJoin, tableUsage, update, whereNoFormat, whereUsage
-} from "./modelsModel";
+} from "../../../../Models/Basics/modelsModel";
 import Section from "../../../../Components/Docs/Section";
 import {Code, Link, List, ListItem, Text, UnorderedList} from "@chakra-ui/react";
 import CodeMultiLine from "../../../../Components/Docs/CodeMultiLine";
@@ -101,7 +101,7 @@ export default function Models() {
         </Section>
         <Section navigator={navigations[5]}>
             <TipsCard>
-                For list of available method in Eloquent. Please consult their
+                For list of available method in Eloquent. Please consult their {" "}
                 <Link href="https://laravel.com/docs/9.x/eloquent">Official Documentation</Link>.
             </TipsCard>
             <Text>Here&lsquo;s is the list of available method to use for ASMVC Model:</Text>

@@ -6,7 +6,7 @@ import Folder from "../../../../Components/Docs/Folder";
 import File from "../../../../Components/Docs/File";
 import TipsCard from "../../../../Components/Docs/TipsCard";
 import CodeMultiLine from "../../../../Components/Docs/CodeMultiLine";
-import {navigations, sessionConfig} from "./configModel";
+import {navigations, sessionConfig} from "../../../../Models/Basics/configModel";
 
 export default function Configs() {
     return <Layout title="Configuration" subTitle="ASMVC Configuration" navigations={navigations}

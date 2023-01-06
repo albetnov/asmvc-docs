@@ -5,7 +5,7 @@ import TipsCard from "../../../../Components/Docs/TipsCard";
 import CodeOneLine from "../../../../Components/Docs/CodeOneLine";
 import CodeMultiLine from "../../../../Components/Docs/CodeMultiLine";
 import ListInfo from "../../../../Components/Docs/ListInfo";
-import {envFile, navigations} from "./environmentModel";
+import {envFile, navigations} from "../../../../Models/Starting/environmentModel";
 
 
 export default function Environment() {
