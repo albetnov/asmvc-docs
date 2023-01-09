@@ -38,7 +38,8 @@ const routes: RoutesSchema[] = [
             {title: "Configurations", href: "/docs/basics/configs"},
             {title: "Routing", href: "/docs/basics/routings"},
             {title: "Logic or Controllers", href: "/docs/basics/controller"},
-            {title: "Bridge of Data (Model)", href: "/docs/basics/models"}
+            {title: "Bridge of Data (Model)", href: "/docs/basics/models"},
+            {title: "The Visual (Views)", href: "/docs/basics/views"}
         ]
     }
 ];
@@ -75,7 +76,7 @@ function useLayoutModel() {
         if (index > 0) {
             setHasPrevious(true);
         }
-        
+
         if (index >= indexedRoutes.length - 1) {
             setHasNext(false);
         }
