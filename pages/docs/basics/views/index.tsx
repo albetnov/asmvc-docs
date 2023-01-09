@@ -11,7 +11,8 @@ import RouteLink from "../../../../Components/RouteLink";
 
 export default function Views() {
     return (
-        <Layout subTitle="The World of ASMVC" navigations={navigations} navigatorTitle="All about the views">
+        <Layout title="View Engine" subTitle="The World of ASMVC" navigations={navigations}
+                navigatorTitle="All about the views">
             <Section navigator={navigations[0]}>
                 <Text>Views play an important role in part of MVC (Models-Views-Controllers). In this case, the view
                     of course act as a visual representation of your app to the end user. With that being said,
@@ -110,8 +111,12 @@ export default function Views() {
                 <Text>Because of that ASMVC provides both globals helpers:</Text>
                 <List>
                     <ListItem>
-                        <CodeMultiLine code={generalFn.csrf}/>
-                        <Text>To render HTML Input CSRF Token</Text>
+                        <CodeMultiLine code={generalFn.csrf_field}/>
+                        <Text>To render HTML Input CSRF Token (ASMVC View)</Text>
+                    </ListItem>
+                    <ListItem>
+                        <CodeMultiLine code={latteFn.csrf}/>
+                        <Text>To render HTML Input CSRF Token (Latte View)</Text>
                     </ListItem>
                     <ListItem>
                         <CodeMultiLine code={generalFn.getErrorMsg}/>

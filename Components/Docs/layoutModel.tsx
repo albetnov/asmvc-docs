@@ -41,6 +41,11 @@ const routes: RoutesSchema[] = [
             {title: "Bridge of Data (Model)", href: "/docs/basics/models"},
             {title: "The Visual (Views)", href: "/docs/basics/views"}
         ]
+    },
+    {
+        definition: "Diving The Oceans", identifier: "/docs/divein", data: [
+            {title: "CSRF", href: "/docs/divein/csrf"}
+        ]
     }
 ];
 

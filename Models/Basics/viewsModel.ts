@@ -16,14 +16,15 @@ const viewsHelpersFn = {
 };
 
 const generalFn = {
-    csrf: "csrf($key)",
+    csrf_field: "csrf_field($field)",
     getErrorMsg: "getErrorMsg($fieldName)",
 };
 
 const latteFn = {
     flash: "flash()",
     match: "match($urlPath, $className)",
-    url: "url($path)"
+    url: "url($path)",
+    csrf: "csrf($field)"
 };
 
 export {latteFn, generalFn, viewsHelpersFn, navigations};
