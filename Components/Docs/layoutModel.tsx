@@ -46,7 +46,8 @@ const routes: RoutesSchema[] = [
         definition: "Diving The Oceans", identifier: "/docs/divein", data: [
             {title: "CSRF", href: "/docs/divein/csrf"},
             {title: "Lifecycle", href: "/docs/divein/lifecycle"},
-            {title: "Middleware", href: "/docs/divein/middleware"}
+            {title: "Middleware", href: "/docs/divein/middleware"},
+            {title: "Request Interface", href: "/docs/divein/request"}
         ]
     }
 ];
