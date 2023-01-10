@@ -17,7 +17,10 @@ function getAllFile(folderPath: string, filePaths: string[] = []) {
         getAllFile(filePath, filePaths);
       } else {
         // If it's a file, add the file path to the filePaths array
-        filePaths.push(filePath);
+        // While ensuring that search won't be added.
+        if (!filePath.includes("search")) {
+          filePaths.push(filePath);
+        }
       }
     }
   } catch (err) {
