@@ -49,7 +49,7 @@ function readAllFile(search?: string) {
   }
 
   if (search) {
-    return readedFile.filter((item) => item.text.includes(search));
+    return readedFile.filter((item) => item.text.toLowerCase().includes(search.toLowerCase()));
   }
 
   return readedFile;
