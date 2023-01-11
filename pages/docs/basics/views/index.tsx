@@ -107,7 +107,7 @@ export default function Views() {
                 <Text>To make sure an attack won&lsquo;t occur when an user submitting a form through the app. ASMVC
                     provide basic security like CSRF Protection.</Text>
                 <TipsCard>To learn more about CSRF Protection, please consult CSRF Documentation <RouteLink
-                    href="/">here</RouteLink>.</TipsCard>
+                    href="/docs/divein/csrf">here</RouteLink>.</TipsCard>
                 <Text>Because of that ASMVC provides both globals helpers:</Text>
                 <List>
                     <ListItem>
@@ -119,9 +119,13 @@ export default function Views() {
                         <Text>To render HTML Input CSRF Token (Latte View)</Text>
                     </ListItem>
                     <ListItem>
+                        <CodeMultiLine code={generalFn.checkError}/>
+                        <Text>To check validation error.</Text>
+                    </ListItem>
+                    <ListItem>
                         <CodeMultiLine code={generalFn.getErrorMsg}/>
                         <Text>And this is not CSRF, instead this is a validation getters. Which we going to look forward
-                            in section <RouteLink href="/">Validations</RouteLink></Text>
+                            in section <RouteLink href="/docs/divein/validation">Validations</RouteLink></Text>
                     </ListItem>
                 </List>
             </Section>

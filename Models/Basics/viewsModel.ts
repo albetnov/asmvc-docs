@@ -18,6 +18,7 @@ const viewsHelpersFn = {
 const generalFn = {
     csrf_field: "csrf_field($field)",
     getErrorMsg: "getErrorMsg($fieldName)",
+    checkError: "checkError($fieldName)"
 };
 
 const latteFn = {
