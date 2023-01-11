@@ -18,7 +18,7 @@ import {
 } from "@chakra-ui/react";
 import AccordionLink from "./AccordionLink";
 import Navigator, {NavigatorList} from "./Navigator";
-import {FiChevronRight, FiMenu} from "react-icons/fi";
+import {FiChevronRight, FiMenu, FiSearch} from "react-icons/fi";
 import Footer from "../Topbar/Footer";
 import Logo from "../Logo";
 import SwitchMode from "../Topbar/SwithMode";
@@ -54,7 +54,7 @@ export default function Layout({title, desc, children, navigations, subTitle, na
             <header>
                 <Flex shadow="base" p={10} justifyContent="space-between">
                     <Logo/>
-                    <Flex gap={5}>
+                    <Flex gap={5} alignItems="center">
                         <Button display={{base: "block", xl: "none"}} bg="none" onClick={onOpen}><FiMenu/></Button>
                         <Drawer isOpen={isOpen} onClose={onClose}>
                             <DrawerOverlay/>
@@ -89,6 +89,7 @@ export default function Layout({title, desc, children, navigations, subTitle, na
                                 </DrawerFooter>
                             </DrawerContent>
                         </Drawer>
+                        <Button bg="none" onClick={() => router.push("/docs/search")}><FiSearch/></Button>
                         <SwitchMode/>
                     </Flex>
                 </Flex>
