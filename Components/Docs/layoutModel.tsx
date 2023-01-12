@@ -48,7 +48,8 @@ const routes: RoutesSchema[] = [
             {title: "Lifecycle", href: "/docs/divein/lifecycle"},
             {title: "Middleware", href: "/docs/divein/middleware"},
             {title: "Request Interface", href: "/docs/divein/request"},
-            {title: "Validation", href: "/docs/divein/validation"}
+            {title: "Validation", href: "/docs/divein/validation"},
+            {title: "Migration", href: "/docs/divein/migration"}
         ]
     }
 ];
