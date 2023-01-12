@@ -113,6 +113,16 @@ export default function Migration() {
                             seeders order.</Text>
                         <CodeMultiLine code={seederFileArray}/>
                     </ListItem>
+                    <ListItem>
+                        <Code>exceptMigration()</Code>
+                        <Text>If <Code>migrations()</Code> follow sort and run migration that defined in array
+                            items. <Code>exceptMigration()</Code> doesn&lsquo;t has any sorting capabilities. Instead an
+                            array you returned here will ignored when migration running.</Text>
+                    </ListItem>
+                    <ListItem>
+                        <Code>exceptSeeder()</Code>
+                        <Text>The same thing like <Code>exceptMigration()</Code> but for seeders.</Text>
+                    </ListItem>
                 </UnorderedList>
                 <TipsCard>Learn more about <RouteLink href="/docs/divein/seeders">Seeders</RouteLink>.</TipsCard>
             </Section>

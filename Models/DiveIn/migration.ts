@@ -43,6 +43,16 @@ class Sorter
     {
         return null;
     }
+    
+    public function exceptMigration(): ?array
+    {
+        return null;
+    }
+
+    public function exceptSeeder(): ?array
+    {
+        return null;
+    }
 }
 `;
 
