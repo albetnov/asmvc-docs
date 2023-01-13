@@ -52,6 +52,11 @@ const routes: RoutesSchema[] = [
             {title: "Migration", href: "/docs/divein/migration"},
             {title: "Seeder", href: "/docs/divein/seeder"}
         ]
+    },
+    {
+        definition: "Advancing Oceans", identifier: "/docs/advanced", data: [
+            {title: "Container", href: "/docs/advanced/container"}
+        ]
     }
 ];
 
