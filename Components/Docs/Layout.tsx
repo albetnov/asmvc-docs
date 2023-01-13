@@ -12,12 +12,15 @@ import {
     Flex,
     Grid,
     GridItem,
-    Heading, List, ListIcon, ListItem,
+    Heading,
+    List,
+    ListIcon,
+    ListItem,
     Text,
     UnorderedList,
 } from "@chakra-ui/react";
 import AccordionLink from "./AccordionLink";
-import Navigator, {NavigatorList} from "./Navigator";
+import Navigator from "./Navigator";
 import {FiChevronRight, FiMenu, FiSearch} from "react-icons/fi";
 import Footer from "../Topbar/Footer";
 import Logo from "../Logo";
@@ -106,7 +109,9 @@ export default function Layout({title, desc, children, navigations, subTitle, na
                         <Heading textAlign="center">{subTitle}</Heading>
                         <Navigator title={navigatorTitle} lists={navigations}/>
                     </Box>
-                    {children}
+                    <Box overflowY="hidden">
+                        {children}
+                    </Box>
                     <Flex mt={100} justifyContent="space-between">
                         {hasPrevious ? (
                             <Button maxW="50%" onClick={prevHandler} variant="outline" colorScheme="blue"

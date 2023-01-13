@@ -49,7 +49,8 @@ const routes: RoutesSchema[] = [
             {title: "Middleware", href: "/docs/divein/middleware"},
             {title: "Request Interface", href: "/docs/divein/request"},
             {title: "Validation", href: "/docs/divein/validation"},
-            {title: "Migration", href: "/docs/divein/migration"}
+            {title: "Migration", href: "/docs/divein/migration"},
+            {title: "Seeder", href: "/docs/divein/seeder"}
         ]
     }
 ];

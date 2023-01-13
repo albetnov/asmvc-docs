@@ -95,9 +95,10 @@ export default function Migration() {
                 </TipsCard>
             </Section>
             <Section navigator={navigations[4]}>
-                <Text>ASMVC run your migration file randomly, regardless the timestamp given. In case something mess up
-                    (Usually relation related migration) you have to manually define the order of migration. For that,
-                    ASMVC provide <Code>Sorter.php</Code> file which contain:</Text>
+                <Text>ASMVC run your migration file from the time given at the end after <q>_</q> token (e.g.
+                    Flight_1673488199.php). The <Code>1673488199</Code> will be used as comparison. In case something
+                    mess up (Usually relation related migration) you have to manually define the order of migration. For
+                    that, ASMVC provide <Code>Sorter.php</Code> file which contain:</Text>
                 <CodeMultiLine code={sorterFile}/>
                 <Text>The file contains a class that have two methods:</Text>
                 <UnorderedList mt={3}>
