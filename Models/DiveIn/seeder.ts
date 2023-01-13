@@ -24,10 +24,11 @@ class SeederName extends Seeders
          * 
          **/
             
-        \\$this->fake(1, fn(Generator \\$fake) => [
-            'key' => \\$fake->name()
-        ])
-        ->done(); // mark as finish 
+        $this->setTable($table)
+            ->fake(1, fn(Generator $fake) => [
+                'key' => $fake->name()
+            ])
+            ->done(); // mark as finish 
     }
 }`;
 
