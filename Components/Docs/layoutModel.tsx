@@ -60,7 +60,8 @@ const routes: RoutesSchema[] = [
             {title: "Logging", href: "/docs/advanced/logger"},
             {title: "Caching", href: "/docs/advanced/cache"},
             {title: "Multi Lingual", href: "/docs/advanced/translation"},
-            {title: "Redis", href: "/docs/advanced/redis"}
+            {title: "Redis", href: "/docs/advanced/redis"},
+            {title: "Testing", href: "/docs/advanced/tests"}
         ]
     }
 ];
