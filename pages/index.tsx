@@ -101,7 +101,8 @@ export default function Home() {
                                 Yes you can! ASMVC gives you freedom towards <Code>Core/</Code> file.
                                 That&apos;s also the reason why <Code>Core/</Code> exposed
                                 and located in the same folder as your projects files. Please feel free to customize
-                                anything you need to built your app.
+                                anything you need to built your app. Actually I am too lazy to separate it. So yeah,
+                                become one with the sword? But hey, there&lsquo;s some advantages too.
                             </QuestionAnswer>
                             <QuestionAnswer question="Should I used this framework for production?">
                                 Well ASMVC does have <Code>production</Code> mode. But what
@@ -110,21 +111,23 @@ export default function Home() {
                                 production nor professional usage. I highly advised you to look up towards framework
                                 like <Link href="https://laravel.com">Laravel</Link> and <Link
                                 href="https://symfony.com">Symfony</Link> if you targeting
-                                proffesionals/industrials.
+                                proffesionals/industrials. I mean this framework has zero tests coverage.
                             </QuestionAnswer>
                             <QuestionAnswer question="Will version 4 came out?">
                                 Nope. V3 is the final. Bug Fix or security issues will still maintained though.
                                 However, something like deprecated package will depend on &quot;Will there be any
-                                replacement
-                                out there?&quot; If yes, does this replacement easy to migrate to? If not, I think you
-                                should
-                                stop using ASMVC then.
+                                replacement out there?&quot; If yes, does this replacement easy to migrate to? If not, I
+                                think you should stop using ASMVC then.
                             </QuestionAnswer>
                             <QuestionAnswer question="Where's the old documentation regarding v1 or v2?">
-                                They bla bla bla bla...
+                                They still accessible using their old links.
                             </QuestionAnswer>
                             <QuestionAnswer question="Will old documentation be migrated to here?">
                                 Nope.
+                            </QuestionAnswer>
+                            <QuestionAnswer
+                                question="Is ASMVC is a Collection of Libraries wrapped to Single Framework?">
+                                YES.
                             </QuestionAnswer>
                         </Accordion>
                     </Card>
