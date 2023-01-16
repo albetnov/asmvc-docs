@@ -2,7 +2,7 @@ import {
     Box,
     Button, Card, CardBody, CardHeader,
     Container, Flex,
-    Heading,
+    Heading, Highlight,
     Input,
     InputGroup,
     InputLeftElement,
@@ -11,9 +11,11 @@ import {
 import {FiSearch} from "react-icons/fi";
 import Layout from "../../../Components/Layout";
 import SearchModel, {SearchResult, getServerSideProps, parseTitle} from "../../../Models/Search/SearchModel";
+import {useRouter} from "next/router";
 
 export default function Search({items}: SearchResult) {
     const {searchItem, searchRef, navigateToFile} = SearchModel();
+    const {query} = useRouter();
 
     return (
         <Layout title="Search Documentation" desc="Search ASMVC Documentation">
@@ -54,7 +56,17 @@ export default function Search({items}: SearchResult) {
                                     size="lg">{parseTitle(item.file)}</Heading>
                             </CardHeader>
                             <CardBody>
-                                <Text>{item.text.length > 500 ? item.text.substring(0, 500) + "..." : item.text}</Text>
+                                <Text>
+                                    <Highlight
+                                        styles={{
+                                            p: 1,
+                                            rounded: "full",
+                                            bg: "blue.300"
+                                        }}
+                                        query={(query?.query as string)}>
+                                        {item.text.length > 500 ? item.text.substring(0, 500) + "..." : item.text}
+                                    </Highlight>
+                                </Text>
                             </CardBody>
                         </Card>
                     )) : <Text>No Items Found.</Text>}
