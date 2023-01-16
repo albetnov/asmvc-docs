@@ -227,6 +227,63 @@ export default function Console() {
                     </ListItem>
                 </UnorderedList>
             </Section>
+            <Section navigator={navigations[6]}>
+                <Text>
+                    ASMVC not only ships with Symfony Console. But also <Link
+                    href="https://packagist.org/packages/nunomaduro/termwind">Termwind</Link> which enchant the power of
+                    beauty right to the UI. ASMVC well integrate with Termwind and also expose some Api&lsquo;s for you
+                    use and other things you may need:
+                </Text>
+                <UnorderedList>
+                    <ListItem>
+                        <Code>render(string $html)</Code>
+                        <Text>Give the render instance of termwind.</Text>
+                    </ListItem>
+                    <ListItem>
+                        <Code>error(string $message)</Code>
+                        <Text>Stylized error message</Text>
+                    </ListItem>
+                    <ListItem>
+                        <Code>success(string $message)</Code>
+                        <Text>Stylized success message</Text>
+                    </ListItem>
+                    <ListItem>
+                        <Code>badgeWarn(string $message)</Code>
+                        <Text>Stylized warning message with same line</Text>
+                    </ListItem>
+                    <ListItem>
+                        <Code>badgeSuccess(string $message)</Code>
+                        <Text>Stylized success message with same line</Text>
+                    </ListItem>
+                    <ListItem>
+                        <Code>badgeError(string $message)</Code>
+                        <Text>Stylized error message with same line</Text>
+                    </ListItem>
+                    <ListItem>
+                        <Code>badgeInfo(string $message)</Code>
+                        <Text>Stylized info message with same line</Text>
+                    </ListItem>
+                    <ListItem>
+                        <Code>badge(string $message, string $badgeTitle, BadgeColor $color)</Code>
+                        <Text>A configurable stylized badge</Text>
+                    </ListItem>
+                    <ListItem>
+                        <Code>ask(string $question, ?array $autoComplete = null, ?string $defaultValue = null): string |
+                            bool</Code>
+                        <Text>A stylized question prompt that features Termwind&lsquo;s auto completion and a default
+                            value if user answer is invalid. Return <Code>false</Code> if user input invalid with no
+                            default value given.</Text>
+                    </ListItem>
+                    <ListItem>
+                        <Code>prompt(string $question, PromptableValue $defaultValue = PromptableValue::YES):
+                            PromptableValue|bool</Code>
+                        <Text>
+                            Just like <Code>ask()</Code> but user limited to y, yes, n, no.
+                            Return <Code>PromptableValue</Code> if user input is valid and otherwise <Code>false</Code>.
+                        </Text>
+                    </ListItem>
+                </UnorderedList>
+            </Section>
         </Layout>
     );
 }

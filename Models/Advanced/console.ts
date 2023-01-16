@@ -4,7 +4,8 @@ const navigations = [
     {link: "personal-command", title: "Generating your own CLI"},
     {link: "understanding-them", title: "Understanding Them"},
     {link: "fluent-param-builder", title: "The FluentParamBuilder Apis"},
-    {link: "fluent-optional-param-builder", title: "The FluentOptionalParamBuilder Apis"}
+    {link: "fluent-optional-param-builder", title: "The FluentOptionalParamBuilder Apis"},
+    {link: "command-apis", title: "The Extended Command Interface"}
 ];
 
 const cliBoilerplate = `
