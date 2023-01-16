@@ -58,7 +58,8 @@ const routes: RoutesSchema[] = [
             {title: "Container", href: "/docs/advanced/container"},
             {title: "Console", href: "/docs/advanced/console"},
             {title: "Logging", href: "/docs/advanced/logger"},
-            {title: "Caching", href: "/docs/advanced/cache"}
+            {title: "Caching", href: "/docs/advanced/cache"},
+            {title: "Multi Lingual", href: "/docs/advanced/translation"}
         ]
     }
 ];
