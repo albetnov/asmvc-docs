@@ -1,6 +1,7 @@
-import * as fs from "fs";
-import {NextApiRequest, NextApiResponse} from "next";
+import fs from "fs";
 import {JSDOM} from "jsdom";
+import {GetServerSideProps} from "next";
+import {SearchResult} from "./SearchModel";
 
 function getAllFile(folderPath: string, filePaths: string[] = []) {
     try {
@@ -34,8 +35,9 @@ interface FileInterface {
     text: string;
 }
 
-function readAllFile(search?: string) {
+export function readAllFile(search?: string) {
     const readedFile: FileInterface[] = [];
+
 
     for (const file of getAllFile("./pages/docs")) {
         const jsx = fs.readFileSync(file, "utf-8");
@@ -58,8 +60,12 @@ function readAllFile(search?: string) {
     return readedFile;
 }
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
-    res.json({
-        data: readAllFile(Array.isArray(req.query.query) ? req.query.query.join() : req.query.query),
-    });
-}
+export const getServerSideProps: GetServerSideProps<SearchResult> = async ({query}) => {
+    const host = process.env.host || "http://localhost:3000";
+
+    const items = readAllFile(Array.isArray(query?.query) ? query.query.join() : query.query);
+
+    return {
+        props: {items},
+    };
+};

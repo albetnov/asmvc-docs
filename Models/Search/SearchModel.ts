@@ -1,4 +1,3 @@
-import {GetServerSideProps} from "next";
 import {FormEvent, useEffect, useRef} from "react";
 import {useRouter} from "next/router";
 
@@ -46,15 +45,3 @@ export const parseTitle = (link: string) => {
 
     return currentItem.charAt(0).toUpperCase() + currentItem.slice(1);
 }
-
-export const getServerSideProps: GetServerSideProps<SearchResult> = async ({query}) => {
-    const host = process.env.host || "http://localhost:3000";
-
-    const res = await fetch(host + `/api/search?query=${query.query}`);
-
-    const items = (await res.json()).data;
-
-    return {
-        props: {items},
-    };
-};

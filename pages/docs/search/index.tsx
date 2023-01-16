@@ -10,8 +10,9 @@ import {
 } from "@chakra-ui/react";
 import {FiSearch} from "react-icons/fi";
 import Layout from "../../../Components/Layout";
-import SearchModel, {SearchResult, getServerSideProps, parseTitle} from "../../../Models/Search/SearchModel";
+import SearchModel, {SearchResult, parseTitle} from "../../../Models/Search/SearchModel";
 import {useRouter} from "next/router";
+import {getServerSideProps} from "../../../Models/Search/SearchService.ssr";
 
 export default function Search({items}: SearchResult) {
     const {searchItem, searchRef, navigateToFile} = SearchModel();
