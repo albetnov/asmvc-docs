@@ -38,7 +38,6 @@ interface FileInterface {
 export function readAllFile(search?: string) {
     const readedFile: FileInterface[] = [];
 
-
     for (const file of getAllFile("./pages/docs")) {
         const jsx = fs.readFileSync(file, "utf-8");
         const vdom = new JSDOM(jsx);
