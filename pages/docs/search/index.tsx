@@ -64,7 +64,7 @@ export default function Search({items}: SearchResult) {
                                             rounded: "full",
                                             bg: "blue.300"
                                         }}
-                                        query={(query?.query as string)}>
+                                        query={(query?.query as string) || ""}>
                                         {item.text.length > 500 ? item.text.substring(0, 500) + "..." : item.text}
                                     </Highlight>
                                 </Text>
