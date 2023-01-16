@@ -57,7 +57,8 @@ const routes: RoutesSchema[] = [
         definition: "Advancing Oceans", identifier: "/docs/advanced", data: [
             {title: "Container", href: "/docs/advanced/container"},
             {title: "Console", href: "/docs/advanced/console"},
-            {title: "Logging", href: "/docs/advanced/logger"}
+            {title: "Logging", href: "/docs/advanced/logger"},
+            {title: "Caching", href: "/docs/advanced/cache"}
         ]
     }
 ];
