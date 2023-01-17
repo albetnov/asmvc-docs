@@ -61,7 +61,8 @@ const routes: RoutesSchema[] = [
             {title: "Caching", href: "/docs/advanced/cache"},
             {title: "Multi Lingual", href: "/docs/advanced/translation"},
             {title: "Redis", href: "/docs/advanced/redis"},
-            {title: "Testing", href: "/docs/advanced/tests"}
+            {title: "Testing", href: "/docs/advanced/tests"},
+            {title: "Going Restful with ASMVC", href: "/docs/advanced/rest"}
         ]
     }
 ];
